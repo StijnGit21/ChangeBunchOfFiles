@@ -1,18 +1,19 @@
 import os
+import json
 from PIL import Image
 import piexif
 from datetime import datetime
 
-# --------------- Constants ---------------
-FOLDER_PATH = r"C:\Users\stijn\Downloads"  # Folder containing the photos
+# Load settings from config.json
+with open('config.json', 'r') as config_file:
+    config = json.load(config_file)
 
-UPDATE_DATE = True    # Set to True to update the date; False to leave it unchanged
-UPDATE_LOCATION = False  # Set to True if you want to update the GPS location
-
-NEW_DATE_STR = "2021-12-27 12:00:00"  # New date in 'YYYY-MM-DD HH:MM:SS' format
-NEW_LATITUDE = 51.4364687
-NEW_LONGITUDE = 5.4844615
-# ------------------------------------------
+FOLDER_PATH = config["FOLDER_PATH"]
+UPDATE_DATE = config["UPDATE_DATE"]
+UPDATE_LOCATION = config["UPDATE_LOCATION"]
+NEW_DATE_STR = config["NEW_DATE_STR"]
+NEW_LATITUDE = config["NEW_LATITUDE"]
+NEW_LONGITUDE = config["NEW_LONGITUDE"]
 
 # Function to convert decimal coordinates to EXIF GPS format
 def decimal_to_dms(decimal):
