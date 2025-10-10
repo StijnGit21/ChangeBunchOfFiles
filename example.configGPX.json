@@ -1,0 +1,4 @@
+{
+    "INPUT_GPX": "path to your input gpx file",
+    "OUTPUT_GPX": "path to your output gpx file"
+}

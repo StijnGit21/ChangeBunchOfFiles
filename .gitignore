@@ -1,1 +1,5 @@
-config.json
+# Negeer alle JSON-bestanden
+*.json
+
+# Maak uitzondering voor JSON-bestanden die beginnen met 'example'
+!example*.json

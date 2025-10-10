@@ -5,7 +5,7 @@ import piexif
 from datetime import datetime
 
 # Load settings from config.json
-with open('config.json', 'r') as config_file:
+with open('configFoto.json', 'r') as config_file:
     config = json.load(config_file)
 
 FOLDER_PATH = config["FOLDER_PATH"]
